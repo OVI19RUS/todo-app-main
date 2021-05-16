@@ -1,0 +1,137 @@
+body {margin: 0 auto;
+    max-width: 1440px;
+padding: 0;
+font-family: 'Josefin Sans', sans-serif;
+font-weight: 400;
+font-size: 18px;
+background-color: hsl(0, 0%, 98%);
+min-height: 100vh;}
+
+.container {max-width: 600px;
+margin: -27rem auto;}
+
+header {background-image: url(images/bg-desktop-light.jpg);
+    background-repeat: no-repeat;
+height: 500px;}
+
+.moon, .sun {float: right;
+width: 38px;
+cursor: pointer;}
+
+.sun {display: none;}
+
+h1 {color: hsl(0, 0%, 98%);
+text-transform: uppercase;
+font-size: 40px;
+letter-spacing: 9px;}
+
+header, form {display: flex;
+justify-content: center;
+align-items: center;}
+
+form input {border: none;
+padding: 1rem 18.3rem 1rem 2rem;
+background: white;
+text-align: left;
+font-family: 'Josefin Sans', sans-serif;
+font-size: 18px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+}
+
+form button {cursor: pointer;
+border: none;
+padding: 1.57rem;
+background: white;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;}
+
+.todo-container {display: flex;
+    justify-content: center;
+align-items: center;
+margin-left: -1.2rem;
+margin-right: 1.2rem;
+margin-top: 1.5rem;
+}
+
+.todo-list {list-style: none;
+min-width: 100%}
+
+.draggable {
+    will-change: transform;
+    background-color: white;
+display: flex;
+justify-content: space-between;
+align-items: center;
+cursor: pointer;
+user-select: none;
+text-align: left;}
+
+
+.delete-btn {background-color: white;
+border: none;
+padding: 1rem;
+cursor: pointer;}
+
+.complete-btn {
+    border-radius: 50%;
+    padding: 0.3rem;
+    background: rgb(131, 131, 131);}
+
+.todo-item {padding: 0rem;}
+
+.draggable img {pointer-events: none;}
+
+.completed {text-decoration: line-through;
+color: hsl(236, 9%, 61%);}
+
+.fall {transform: translateY(8rem) rotateZ(20deg);
+opacity: 0;}
+
+.select {display: flex;
+    justify-content: space-between;
+align-items: center;
+font-size: 14px;
+padding: 1rem;
+background-color: white;
+margin-top: -1.1rem;
+border-bottom-right-radius: 5px;
+border-bottom-left-radius: 5px;
+color: hsl(236, 9%, 61%);
+}
+
+.all:hover, .active:hover, .completed:hover, .right:hover {color: black;}
+
+.all, .right {cursor: pointer;}
+
+.over {opacity: 0.5;}
+
+.filter-todo {display: flex;
+    flex-direction: row;
+    gap: 1rem;}
+
+.drag-n-drop {display: flex;
+    justify-content: center;
+align-items: center;}
+
+footer { font-size: 11px; 
+text-align: center;
+}
+.attribution a { color: hsl(228, 45%, 44%); }
+
+/* NIGHT MODE */
+
+body.Dark {
+    background-color: hsl(235, 21%, 11%);
+    color: hsl(234, 11%, 52%);
+}
+
+form input.Dark, form button.Dark {
+    background-color: hsl(235, 24%, 19%);
+    color: hsl(234, 39%, 85%);
+}
+
+.draggableDark{
+    background-color: hsl(235, 24%, 19%);
+}
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Todo app</title>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <header></header>
+      <div class="container">
+        <div class="naming">
+          <h1>
+            Todo <img class="moon" src="images/icon-moon.svg" alt="moon-img" /> <img class="sun" src="images/icon-sun.svg" alt="">
+          </h1>
+        </div>
+        <form>
+          <button class="todo-button" type="submit"></button>
+          <input type="text" id="todo-input" placeholder="Create a new todo..."/>
+        </form>
+        <div class="todo-container">
+          <ul class="todo-list"></ul>
+        </div>
+        <div class="select">
+          <div class="left"><span id="item-count">0</span> items left</div>
+          <div class="filter-todo">
+            <option value="all" class="all">All</option>
+            <option value="active" class="all">Active</option>
+            <option value="completed" class="all">Completed</option>
+          </div>
+          <div class="right">Clear Completed</div>
+        </div>
+        <div class="drag-n-drop">
+          <p>Drag and drop to reorder list</p>
+        </div>
+        <footer>
+          <div class="attribution">
+            Challenge by
+            <a
+              href="https://www.frontendmentor.io?ref=challenge"
+              target="_blank"
+              >Frontend Mentor</a
+            >. Coded by <a href="https://github.com/OVI19RUS">Alex Makhalov</a>.
+          </div>
+        </footer>
+        <script src="index.js"></script>
+        <script src="https://unpkg.com/draggabilly@2/dist/draggabilly.pkgd.min.js"></script>
+      </div>
+    </main>
+  </body>
+</html>
