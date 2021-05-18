@@ -4,15 +4,18 @@ padding: 0;
 font-family: 'Josefin Sans', sans-serif;
 font-weight: 400;
 font-size: 18px;
-background-color: hsl(0, 0%, 98%);
-min-height: 100vh;}
+min-height: 100vh;
+transition: all 0.5s ease;}
+
+.Light {background-color: hsl(0, 0%, 98%);}
 
 .container {max-width: 600px;
 margin: -27rem auto;}
 
 header {background-image: url(images/bg-desktop-light.jpg);
     background-repeat: no-repeat;
-height: 500px;}
+height: 500px;
+transition: all 0.5s ease;}
 
 .moon, .sun {float: right;
 width: 38px;
@@ -27,63 +30,95 @@ letter-spacing: 9px;}
 
 header, form {display: flex;
 justify-content: center;
-align-items: center;}
+align-items: center;
+transition: all 0.5s ease;}
 
 form input {border: none;
-padding: 1rem 18.3rem 1rem 2rem;
+padding: 1rem 18.8rem 1rem 5rem;
 background: white;
 text-align: left;
 font-family: 'Josefin Sans', sans-serif;
 font-size: 18px;
-border-top-right-radius: 5px;
-border-bottom-right-radius: 5px;
+border-radius: 5px;
+position: relative;
 }
 
 form button {cursor: pointer;
 border: none;
-padding: 1.57rem;
-background: white;
-border-top-left-radius: 5px;
-border-bottom-left-radius: 5px;}
+padding: 1.7rem;
+position: absolute;
+margin-right: 35.5rem;}
+
 
 .todo-container {display: flex;
     justify-content: center;
 align-items: center;
-margin-left: -1.2rem;
-margin-right: 1.2rem;
+margin-left: -1.25rem;
+margin-right: 1.25rem;
 margin-top: 1.5rem;
 }
 
 .todo-list {list-style: none;
-min-width: 100%}
+min-width: 100%;
+transition: all 0.5s ease;}
 
 .draggable {
-    will-change: transform;
     background-color: white;
 display: flex;
 justify-content: space-between;
 align-items: center;
-cursor: pointer;
+cursor: move;
 user-select: none;
-text-align: left;}
+transition: all 0.5s ease;
+height: 3rem;
+margin-top: 2px;
+}
 
-
-.delete-btn {background-color: white;
+.delete-btn {background: white;
 border: none;
 padding: 1rem;
-cursor: pointer;}
+cursor: pointer;
+transition: all 0.5s ease;}
 
-.complete-btn {
+.delete-btn:hover {background-image: url(images/icon-cross.svg);
+    background-repeat: no-repeat;
+margin-top: 1rem;}
+
+.btn {
+    border: 1px solid;
     border-radius: 50%;
-    padding: 0.3rem;
-    background: rgb(131, 131, 131);}
+    margin-left: 0.5rem;
+    padding: 0.7rem;
+    cursor: pointer;
+    background: transparent;
+    border-color: hsl(236, 9%, 61%);
+    transition: all 0.5s ease;
+}
+
+.btn:hover {
+  border: double 1px transparent;
+  background-image: linear-gradient(hsl(0, 0%, 98%), hsl(0, 0%, 98%)),
+  radial-gradient(circle at top left, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  background-origin: border-box;
+  background-clip: content-box, border-box;}
+
+.complete-btn:hover {
+    background-image: url(images/icon-check.svg),
+    linear-gradient(120deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+}
+
+#todo_0 {border-top-right-radius: 5px;
+         border-top-left-radius: 5px;}
 
 .todo-item {padding: 0rem;}
 
 .draggable img {pointer-events: none;}
 
 .completed {text-decoration: line-through;
-color: hsl(236, 9%, 61%);}
+color: hsl(233, 11%, 84%);}
 
 .fall {transform: translateY(8rem) rotateZ(20deg);
 opacity: 0;}
@@ -98,13 +133,18 @@ margin-top: -1.1rem;
 border-bottom-right-radius: 5px;
 border-bottom-left-radius: 5px;
 color: hsl(236, 9%, 61%);
+transition: all 0.5s ease;
 }
 
-.all:hover, .active:hover, .completed:hover, .right:hover {color: black;}
+.all {cursor: pointer;}
 
-.all, .right {cursor: pointer;}
+.all:hover {color: black;}
 
-.over {opacity: 0.5;}
+.all.active {color: hsl(220, 98%, 61%);}
+
+
+
+.over {transform: scale(1.1, 1.1);}
 
 .filter-todo {display: flex;
     flex-direction: row;
@@ -121,17 +161,30 @@ text-align: center;
 
 /* NIGHT MODE */
 
-body.Dark {
+.Dark {
     background-color: hsl(235, 21%, 11%);
     color: hsl(234, 11%, 52%);
 }
 
-form input.Dark, form button.Dark {
+.Dark form input, .Dark form button {
     background-color: hsl(235, 24%, 19%);
     color: hsl(234, 39%, 85%);
 }
 
-.draggableDark{
+.Dark div.draggable {
     background-color: hsl(235, 24%, 19%);
+    color: hsl(234, 39%, 85%); 
 }
 
+.Dark div.draggable:hover {color: hsl(236, 33%, 92%);}
+
+.Dark .todo-list .draggable {background-color: hsl(235, 24%, 19%);
+    color: hsl(234, 39%, 85%);}
+
+.Dark .select {background-color: hsl(235, 24%, 19%);
+    color: hsl(234, 39%, 85%);}
+
+.Dark .complete-btn, .Dark .delete-btn {background-color: hsl(235, 24%, 19%);
+    color: hsl(234, 11%, 52%);}
+
+.Dark .all:hover {color: hsl(236, 33%, 92%);}
