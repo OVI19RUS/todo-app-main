@@ -2,17 +2,20 @@
 const todoInput = document.querySelector('#todo-input');
 const todoButton = document.querySelector('.todo-button');
 const todoList = document.querySelector('.todo-list');
-const filterOption = document.querySelector('.filter-todo');
 const moon = document.querySelector('.moon');
 const sun = document.querySelector('.sun');
+let todoid = '0';
+const todoCount = document.getElementById('todo-count');
+const all = document.querySelectorAll('.all')
 
 // Event Listeners
-document.addEventListener('DOMContentLoaded', getTodos);
 todoButton.addEventListener('click', addTodo);
 todoList.addEventListener('click', deleteCheck);
-filterOption.addEventListener('click', filterTodo);
+for (i = 0; i < all.length; i++) {
+all[i].addEventListener('click', filterTodo);
+all[i].addEventListener('click', colorChange);}
 moon.addEventListener('click', goingDark);
-sun.addEventListener('click', goingLight)
+sun.addEventListener('click', goingLight);
 
 //Functions
 
@@ -23,28 +26,28 @@ function addTodo(event){
         alert('Error!')
     }
     else{
-        const todoDiv = document.createElement('div');
+    const todoDiv = document.createElement('div');
     todoDiv.classList.add('draggable');
     todoDiv.setAttribute('draggable', 'true');
+    todoDiv.setAttribute('id', 'todo_' + todoid);
     //Check mark button
     const completedButton = document.createElement('button');
+    completedButton.classList.add('btn');
     completedButton.classList.add('complete-btn');
-    todoDiv.innerHTML = '<img src="images/icon-check.svg"/>';
     todoDiv.appendChild(completedButton);
     //Create LI
     const newTodo = document.createElement('li');
     newTodo.innerText = todoInput.value;
     newTodo.classList.add('todo-item');
     todoDiv.appendChild(newTodo);
-    //Add todo to local storage
-    saveLocalTodos(todoInput.value);
     //Delete button
     const deletedButton = document.createElement('button');
-    deletedButton.innerHTML = '<img src="images/icon-cross.svg"/>';
     deletedButton.classList.add('delete-btn');
     todoDiv.appendChild(deletedButton);
     //Append to list
     todoList.appendChild(todoDiv);
+    todoid++
+    totalMsg(todoid);
     //Clear Todo Input value
     todoInput.value = '';
     }
@@ -57,15 +60,27 @@ function deleteCheck(e){
         const todo = item.parentElement;
         //Animation
         todo.classList.add('fall');
-        removeLocalTodos(todo);
+        todoid--;
         todo.addEventListener('transitionend', function(){
         todo.remove();
         })
     }
 
-    if (item.classList[0] === 'complete-btn'){
+    if (item.classList[0] === 'btn'){
         const todo = item.parentElement;
         todo.classList.toggle('completed');
+        console.log(todo);
+        if(todo.classList.contains('completed')){
+            todoid--;
+            totalMsg(todoid);
+    }else{  todoid++;
+            totalMsg(todoid);
+        }
+    }
+    if(todoid === 0){
+        
+    }else{
+        totalMsg(todoid);
     }
 }
 
@@ -90,83 +105,39 @@ todos.forEach(function(todo){
             todo.style.display = 'none';
         }
         break;
+        case "clear":
+        x = document.querySelectorAll(".completed");
+        for (i = x.length - 1; i >= 0; i--) {
+          x[i].remove();
+        }
     }
 });
 }
 
-function saveLocalTodos(todo){
-    //Check - do I already have thing in there?
-    let todos;
-    if(localStorage.getItem('todos') === null){
-        todos = [];
-    }else{
-        todos = JSON.parse(localStorage.getItem('todos'));
-    }
-    todos.push(todo);
-    localStorage.setItem('todos', JSON.stringify(todos));
+function colorChange (e){
+    for (i = 0; i < all.length; i++) {
+        if (all[i].classList.contains("active")) {
+            all[i].classList.remove("active");
+        }
+      }
+      event.target.classList.add("active");
 }
 
-function getTodos(){
-    let todos;
-    //Check - do I already have thing in there?
-    if(localStorage.getItem('todos') === null){
-        todos = [];
-    }else{
-        todos = JSON.parse(localStorage.getItem('todos'));
-    }
-    todos.forEach(function(todo){
-        const todoDiv = document.createElement('div');
-        todoDiv.classList.add('draggable');
-        todoDiv.setAttribute('draggable', 'true');
-        //Check mark button
-        const completedButton = document.createElement('button');
-        completedButton.innerHTML = '<img src="images/icon-check.svg"/>';
-        completedButton.classList.add('complete-btn');
-        todoDiv.appendChild(completedButton);
-        //Create LI
-        const newTodo = document.createElement('li');
-        newTodo.innerText = todo;
-        newTodo.classList.add('todo-item');
-        todoDiv.appendChild(newTodo);
-        //Delete button
-        const deletedButton = document.createElement('button');
-        deletedButton.innerHTML = '<img src="images/icon-cross.svg"/>';
-        deletedButton.classList.add('delete-btn');
-        todoDiv.appendChild(deletedButton);
-        //Append to list
-        todoList.appendChild(todoDiv);
-    });
-}
-
-function removeLocalTodos(todo){
-    let todos;
-    //Check - do I already have thing in there?
-    if(localStorage.getItem('todos') === null){
-        todos = [];
-    }else{
-        todos = JSON.parse(localStorage.getItem('todos'));
-    }
-    const todoIndex = todo.children[1].innerText;
-    todos.splice(todos.indexOf(todoIndex), 1);
-    localStorage.setItem('todos', JSON.stringify(todos));
-}
 
 function goingDark(){
+    const body = document.querySelector('body');
     moon.style.display = 'none';
     sun.style.display = 'block';
-    document.querySelector('header').style.backgroundImage = 'url(images/bg-desktop-dark.jpg)'
-    document.body.className = 'Dark'; 
-    document.querySelector('input').className = 'Dark';
-    document.querySelector('button').className = 'Dark';
+    document.querySelector('header').style.backgroundImage = 'url(images/bg-desktop-dark.jpg)';
+    body.classList.add('Dark');
 }
 
 function goingLight(){
+    const body = document.querySelector('body');
     sun.style.display = 'none';
     moon.style.display = 'block';
     document.querySelector('header').style.backgroundImage = 'url(images/bg-desktop-light.jpg)'
-    document.body.classList.remove('Dark');
-    document.querySelector('input').classList.remove('Dark');
-    document.querySelector('button').classList.remove('Dark');
+    body.classList.remove('Dark');
 }
 
 todoList.addEventListener('dragstart', (evt) =>{
@@ -208,3 +179,11 @@ todoList.addEventListener('dragover', (evt) => {
   }
    todoList.insertBefore(activeElement, nextElement);
 });
+
+function totalMsg(todoid){
+    if(todoid === 1){
+        return todoCount.innerHTML = '<b>' + todoid + '</b> item left';
+    }else{
+        return todoCount.innerHTML = '<b>' + todoid + '</b> items left';
+    }
+}
