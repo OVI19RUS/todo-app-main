@@ -13,6 +13,7 @@ footer {
   font-size: 11px;
   position: absolute;
   bottom: 0;
+  width: 100%;
 }
 
 .container {
@@ -280,6 +281,18 @@ background-repeat: no-repeat;}
 .Dark .all:hover {
   color: hsl(236, 33%, 92%);
 }
+
+.Dark .btn:hover {
+  border: double 1px transparent;
+  background: linear-gradient(hsl(235, 24%, 19%),hsl(235, 24%, 19%)) padding-box,
+  linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%)) border-box;
+}
+
+.Dark .check:hover {background-image: url(images/icon-check.svg),
+  linear-gradient(120deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+background-position: center;
+background-repeat: no-repeat;}
+
 
 @media (max-width: 550px) {
   body {
