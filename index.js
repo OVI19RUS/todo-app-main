@@ -23,7 +23,7 @@ function addTodo(event){
     //Prevent form from refreshing
     event.preventDefault();
     if (todoInput.value == ''){
-        alert('Error!')
+        alert('Buddy, try another time!')
     }
     else{
     const todoDiv = document.createElement('div');
@@ -69,6 +69,7 @@ function deleteCheck(e){
     if (item.classList[0] === 'btn'){
         const todo = item.parentElement;
         todo.classList.toggle('completed');
+        item.classList.toggle('check');
         console.log(todo);
         if(todo.classList.contains('completed')){
             todoid--;
@@ -78,7 +79,7 @@ function deleteCheck(e){
         }
     }
     if(todoid === 0){
-        
+        totalMsg(todoid)
     }else{
         totalMsg(todoid);
     }
