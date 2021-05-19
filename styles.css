@@ -9,6 +9,13 @@ body {
   transition: all 0.5s ease;
 }
 
+footer {
+  font-size: 11px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
 .container {
   max-width: 600px;
   margin: -27rem auto;
@@ -35,9 +42,9 @@ h1 {
   text-transform: uppercase;
   font-size: 40px;
   letter-spacing: 9px;
+  text-align: left;
 }
 
-header,
 form {
   display: flex;
   justify-content: center;
@@ -46,7 +53,7 @@ form {
 
 form input {
   border: none;
-  width: 100vh;
+  width: 100%;
   padding: 1rem 3rem;
   background: white;
   text-align: left;
@@ -85,21 +92,28 @@ form button {
   background-color: white;
   display: flex;
   align-items: center;
+  justify-content: stretch;
   cursor: move;
   user-select: none;
   transition: all 0.5s ease;
   height: 3rem;
   margin-top: 2px;
-}
+  position: relative;
+  word-break: break-all;
+  height: 100%;
+  padding: 0.5rem 2.5rem 0.5rem 0;}
+
+button {transition: all 0.5s ease;}
 
 .delete-btn {
-  background: white;
+  background: transparent;
   border: none;
-  padding: 1rem;
-  cursor: pointer;
+  padding: 0.55rem;
   transition: all 0.5s ease;
-  margin-left: 31rem;
-  margin-top: 1rem;
+  margin-left: 0;
+  position:absolute;
+  right: 1rem;
+  cursor: pointer;
 }
 
 .delete-btn:hover {
@@ -115,24 +129,26 @@ form button {
   cursor: pointer;
   background: transparent;
   border-color: hsl(236, 9%, 61%);
-  transition: all 0.5s ease;
 }
 
 .btn:hover {
   border: double 1px transparent;
-  background-image: linear-gradient(hsl(0, 0%, 98%), hsl(0, 0%, 98%)),
-    radial-gradient(circle at top left, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
-  background-origin: border-box;
-  background-clip: content-box, border-box;
+  background: linear-gradient(white,white) padding-box,
+  linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%)) border-box;
 }
 
-.complete-btn:hover {
+.check {
   background-image: url(images/icon-check.svg),
     linear-gradient(120deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
   background-position: center;
   background-repeat: no-repeat;
-  border: 1px solid;
+  transition:none;
 }
+
+.check:hover {background-image: url(images/icon-check.svg),
+  linear-gradient(120deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+background-position: center;
+background-repeat: no-repeat;}
 
 #todo_0 {
   border-top-right-radius: 5px;
@@ -192,6 +208,7 @@ form button {
   flex-direction: row;
   gap: 1rem;
   transition: all 0.5s ease;
+  margin-left: 2rem;
 }
 
 .drag-n-drop {
@@ -200,10 +217,6 @@ form button {
   align-items: center;
 }
 
-footer {
-  font-size: 11px;
-  text-align: center;
-}
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
@@ -307,14 +320,14 @@ footer {
     margin-right: 18rem;
   }
 
-  .delete-btn {
-    margin-left: 14rem;
-  }
-
   .todo-container { margin-top: 0.5rem;}
 
 
   .draggable {font-size: 12px;}
+
+  .delete-btn {
+    background-image: url(images/icon-cross.svg);
+  }
 
   .select {font-size: 12px;
   position: relative;}
