@@ -128,7 +128,7 @@ function goingDark(){
     const body = document.querySelector('body');
     moon.style.display = 'none';
     sun.style.display = 'block';
-    document.querySelector('header').style.backgroundImage = 'url(images/bg-desktop-dark.jpg)';
+    document.querySelector('header').classList.add('Dark');
     body.classList.add('Dark');
 }
 
@@ -136,7 +136,7 @@ function goingLight(){
     const body = document.querySelector('body');
     sun.style.display = 'none';
     moon.style.display = 'block';
-    document.querySelector('header').style.backgroundImage = 'url(images/bg-desktop-light.jpg)'
+    document.querySelector('header').classList.remove('Dark');
     body.classList.remove('Dark');
 }
 
