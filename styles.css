@@ -98,7 +98,7 @@ form button {
   position: relative;
   word-break: break-all;
   height: 100%;
-  padding: 0.5rem 2.5rem 0.5rem 0;}
+  padding: 0.6rem 2.5rem 0.6rem 0;}
 
 button {transition: all 0.5s ease;}
 
@@ -133,6 +133,8 @@ button {transition: all 0.5s ease;}
   background: linear-gradient(white,white) padding-box,
   linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%)) border-box;
 }
+
+.complete-btn {margin-top: -0.2rem;}
 
 .check {
   background-image: url(images/icon-check.svg),
