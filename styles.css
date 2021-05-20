@@ -295,7 +295,7 @@ background-repeat: no-repeat;}
 
 @media (max-width: 550px) {
   body {
-    max-width: 550px;
+    max-width: 375px;
     font-size: 14px;
   }
 
