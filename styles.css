@@ -94,11 +94,11 @@ form button {
   user-select: none;
   transition: all 0.5s ease;
   height: 3rem;
-  margin-top: 2px;
   position: relative;
   word-break: break-all;
   height: 100%;
-  padding: 0.6rem 2.5rem 0.6rem 0;}
+  padding: 0.6rem 2.5rem 0.6rem 0;
+  border-bottom: 1px solid hsl(236, 9%, 61%);}
 
 button {transition: all 0.5s ease;}
 
@@ -184,6 +184,7 @@ background-repeat: no-repeat;}
   border-bottom-left-radius: 5px;
   color: hsl(236, 9%, 61%);
   transition: all 0.5s ease;
+  box-shadow: 0 0.1rem 1rem 0 hsl(236, 9%, 61%);
 }
 
 .all {
@@ -341,14 +342,18 @@ background-repeat: no-repeat;}
   }
 
   .select {font-size: 12px;
-  position: relative;}
+  position: relative;
+  margin-top: -0.85rem;
+  box-shadow: 0 0.5rem 0.5rem 0 hsl(236, 9%, 61%);}
 
   .filter-todo {position: absolute;
     max-width: 500px;
     width: 73%;
   margin: 130px 0 0 -16px;
   padding: 16px 0 16px 87px;
-  border-radius: 5px;}
+  border-radius: 5px;
+  box-shadow: 0 0.5rem 1.5rem 0 hsl(236, 9%, 61%);
+}
 
 .drag-n-drop {margin-top: 6rem;}
 }
