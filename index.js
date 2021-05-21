@@ -88,25 +88,25 @@ function deleteCheck(e){
 function filterTodo (e){
 const todos = todoList.childNodes;
 todos.forEach(function(todo){
-    switch (e.target.value) {
-        case 'all':
+    switch (e.target.innerText) {
+        case 'All':
             todo.style.display = 'flex';
         break;
-        case 'completed':
+        case 'Completed':
         if(todo.classList.contains('completed')){
             todo.style.display = 'flex';
         }else{
             todo.style.display = 'none';
         }
         break;
-        case 'active':
+        case 'Active':
         if(!todo.classList.contains('completed')){
             todo.style.display = 'flex';
         }else{
             todo.style.display = 'none';
         }
         break;
-        case "clear":
+        case "Clear Completed":
         x = document.querySelectorAll(".completed");
         for (i = x.length - 1; i >= 0; i--) {
           x[i].remove();
