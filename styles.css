@@ -62,6 +62,7 @@ form input {
   font-family: "Josefin Sans", sans-serif;
   font-size: 18px;
   transition: all 0.5s ease;
+  background: transparent;
 }
 
 form button {
@@ -245,7 +246,6 @@ background-repeat: no-repeat;}
 }
 
 .Dark form,
-.Dark form input,
 .Dark form button {
   background-color: hsl(235, 24%, 19%);
   color: hsl(234, 39%, 85%);
