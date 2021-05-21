@@ -33,12 +33,12 @@
           </h1>
         </div>
         <form>
+          <button class="btn todo-button" type="submit"></button>
           <input
             type="text"
             id="todo-input"
             placeholder="Create a new todo..."
           />
-          <button class="btn todo-button" type="submit"></button>
         </form>
         <div class="todo-container">
           <ul class="todo-list"></ul>
@@ -46,19 +46,19 @@
         <div class="select">
           <span id="todo-count" class="todo-count">0 items left</span>
           <div class="filter-todo">
-            <option value="all" class="all">All</option>
-            <option value="active" class="all">Active</option>
-            <option value="completed" class="all">Completed</option>
+            <p class="all">All</p>
+            <p class="all">Active</p>
+            <p class="all">Completed</p>
           </div>
           <div class="right">
-            <option value="clear" class="all">Clear Completed</option>
+            <p class="all">Clear Completed</p>
           </div>
         </div>
         <div class="drag-n-drop">
           <p>Drag and drop to reorder list</p>
         </div>
         <script src="index.js"></script>
-        <script src="scripts/DragDropTouch.js"></script>
+        <script src="DragDropTouch.js"></script>
       </div>
     </main>
     <footer>
