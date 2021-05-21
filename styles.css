@@ -46,29 +46,26 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: white;
+  border-radius: 5px;
+  padding: 1rem 0;
+  gap: 1rem;
 }
 
 form input {
-  border: none;
   width: 100%;
-  padding: 0.8rem 3rem 0.7rem 3rem;
-  background: white;
+  outline: none;
+  border: none;
   text-align: left;
   font-family: "Josefin Sans", sans-serif;
   font-size: 18px;
-  border-radius: 5px;
-  position: relative;
   transition: all 0.5s ease;
 }
 
 form button {
   cursor: pointer;
   border: none;
-  position: absolute;
-  margin-right: 35.5rem;
-  margin-top: -0.1rem;
   transition: all 0.5s ease;
-  z-index: 1;
 }
 
 .todo-container {
@@ -330,10 +327,6 @@ background-repeat: no-repeat;}
     font-size: 12px;
   }
 
-  form button {
-    margin-right: 290px;
-  }
-
   .todo-container { margin-top: 0.5rem;}
 
 
@@ -346,12 +339,12 @@ background-repeat: no-repeat;}
   .select {font-size: 12px;
   position: relative;
   margin-top: -0.85rem;
-  box-shadow: 0 0.5rem 1.5rem 0 hsl(236, 9%, 61%);}
+  box-shadow: 0 0.5rem 0.5rem 0 hsl(236, 9%, 61%);}
 
   .filter-todo {position: absolute;
     max-width: 500px;
     width: 73%;
-  margin: 130px 0 0 -16px;
+  margin: 8rem 0 0 -1rem;
   padding: 8px 0 8px 87px;
   border-radius: 5px;
   box-shadow: 0 0.5rem 1.5rem 0 hsl(236, 9%, 61%);
