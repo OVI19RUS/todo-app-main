@@ -330,8 +330,7 @@ background-repeat: no-repeat;}
     font-size: 12px;
   }
 
-  .todo-container { margin-top: 0.5rem;
-  box-shadow: 0 0.5rem 0.5rem 0 hsl(236, 9%, 61%);}
+  .todo-container { margin-top: 0.5rem;}
 
 
   .draggable {font-size: 12px;}
@@ -342,10 +341,10 @@ background-repeat: no-repeat;}
 
   .select {font-size: 12px;
   position: relative;
-  margin-top: -0.85rem;}
+  margin-top: -0.85rem;
+  box-shadow: 0 1rem 0.6rem 0 hsl(236, 9%, 61%);}
 
   .filter-todo {position: absolute;
-    max-width: 500px;
     width: 73%;
   margin: 8rem 0 0 -1rem;
   padding: 8px 0 8px 87px;
