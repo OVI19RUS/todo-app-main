@@ -131,7 +131,6 @@ function goingDark(){
     sun.style.display = 'block';
     document.querySelector('header').classList.add('Dark');
     body.classList.add('Dark');
-    document.querySelectorAll('btn').classList.add('Dark');
 }
 
 function goingLight(){
@@ -140,7 +139,6 @@ function goingLight(){
     moon.style.display = 'block';
     document.querySelector('header').classList.remove('Dark');
     body.classList.remove('Dark');
-    document.querySelectorAll('btn').classList.remove('Dark');
 }
 
 todoList.addEventListener('dragstart', (evt) =>{
