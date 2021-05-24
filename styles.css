@@ -251,6 +251,10 @@ background-repeat: no-repeat;}
   color: hsl(234, 39%, 85%);
 }
 
+.Dark form input {
+  color: hsl(234, 39%, 85%);
+}
+
 .Dark div.draggable {
   background-color: hsl(235, 24%, 19%);
   color: hsl(234, 39%, 85%);
